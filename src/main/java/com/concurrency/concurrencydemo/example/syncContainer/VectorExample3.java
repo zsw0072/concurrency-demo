@@ -2,7 +2,6 @@ package com.concurrency.concurrencydemo.example.syncContainer;
 
 
 import java.util.Iterator;
-import java.util.List;
 import java.util.Vector;
 
 
@@ -24,7 +23,7 @@ public class VectorExample3 {
         Iterator<Integer> iterator = v1.iterator();
         while (iterator.hasNext()){
             Integer i = iterator.next();
-            if (i ==3){i
+            if (i ==3){
                 v1.remove(i);
             }
         }
