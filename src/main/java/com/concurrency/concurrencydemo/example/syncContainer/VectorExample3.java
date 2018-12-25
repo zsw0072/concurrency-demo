@@ -13,7 +13,7 @@ public class VectorExample3 {
     //java.util.ConcurrentModificationException
     private static void test1(Vector<Integer> v1){
         for (Integer i : v1) {
-            if (.equals(3)){
+            if (i.equals(3)){
                 v1.remove(i);
             }
         }
