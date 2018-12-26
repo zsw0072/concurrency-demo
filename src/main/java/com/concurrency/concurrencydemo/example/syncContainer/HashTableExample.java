@@ -2,6 +2,7 @@ package com.concurrency.concurrencydemo.example.syncContainer;
 
 import com.concurrency.concurrencydemo.annotations.NotThreadSafe;
 
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
@@ -10,7 +11,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
 @NotThreadSafe
-public class ConllectionsExample1 {
+public class HashTableExample {
 
     //请求总数
     public static int clientTotal = 5000;

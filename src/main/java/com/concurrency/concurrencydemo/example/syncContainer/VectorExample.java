@@ -1,23 +1,25 @@
 package com.concurrency.concurrencydemo.example.syncContainer;
 
 import com.concurrency.concurrencydemo.annotations.NotThreadSafe;
+import com.concurrency.concurrencydemo.annotations.ThreadSafe;
 
-import java.util.Hashtable;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
-@NotThreadSafe
-public class ConllectionsExample1 {
+@ThreadSafe
+public class VectorExample {
 
     //请求总数
     public static int clientTotal = 5000;
     //同时并发执行的线程数
     public static int threadTotal = 200;
 
-    private static Map<Integer,Integer> map = new Hashtable<>();
+    private static List<Integer> list = new Vector<Integer>();
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -39,10 +41,10 @@ public class ConllectionsExample1 {
         }
         countDownLatch.await(); //保证所有的请求执行完
         executorService.shutdown();
-        System.out.println(map.size());
+        System.out.println(list.size());
     }
 
     private static void update(int i) {
-        map.put(i,i);
+        list.add(i);
     }
 }
